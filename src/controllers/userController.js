@@ -29,21 +29,17 @@ const router = express.Router();
 //     })
 //  })
  
- router.get("",(req,res)=>{
-     const {mobileno} = req.body
-     User.findOne({mobileno:mobileno},(err,user)=>{
-         if(user){
-             if(mobileno==user.mobileno ){
-                 res.send({message:"Login Successfull", user: user})
-             }else{
-                 res.send({message:"Incorrect MobileNO."})
-             }
-         }
-         else{
-             res.send({message:"User Not Registered"})
-         }
-     })
- })
+router.get("/:mobileno", async (req, res) => {
+    try {
+      const user = await User.findById(req.params.mobileno)
+        .lean()
+        .exec();
+      return res.send(user);
+    } catch (err) {
+      return res.status(400).send(err.message);
+    }
+  });
+  
 
 
 
