@@ -31,7 +31,7 @@ const router = express.Router();
  
 router.get("/:mobileno", async (req, res) => {
     try {
-      const user = await User.findById(req.params.mobileno)
+      const user = await User.findOne(req.params.mobileno)
         .lean()
         .exec();
       return res.send(user);
