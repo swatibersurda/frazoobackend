@@ -21,6 +21,18 @@ router.get("", async(req,res)=>{
     }
 
 })
+
+router.get("/:id", async (req, res) => {
+    try {
+      const fruits = await Fruit.findById(req.params.id)
+        .lean()
+        .exec();
+      return res.send(fruits);
+    } catch (err) {
+      return res.status(500).send(err.message);
+    }
+  });
+
    
 router.post("", async(req,res)=>{
     try {

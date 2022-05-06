@@ -37,6 +37,16 @@ router.post("", async(req,res)=>{
     }
 
 })
-     
+   
+router.get("/:id", async (req, res) => {
+    try {
+      const vegs = await Veg.findById(req.params.id)
+        .lean()
+        .exec();
+      return res.send(vegs);
+    } catch (err) {
+      return res.status(500).send(err.message);
+    }
+  });
 
 module.exports = router
