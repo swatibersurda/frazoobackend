@@ -9,6 +9,7 @@ const fruitSchema = new mongoose.Schema(
         img:{type:String,required:true},
         price:{type:Number,required:true},
         qty:{type:Number,required:true},
+        id:{type:Number,required:true}
             
     
     },{
