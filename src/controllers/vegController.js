@@ -17,7 +17,7 @@ router.get("", async(req,res)=>{
     } catch (err) {
         console.log("error is : ", err);
 
-        return res.status(500).json(err.massage);
+        return res.status(400).send(err.massage);
     }
 
 })
