@@ -4,10 +4,13 @@ const vegSchema = new mongoose.Schema(
     {
       
             
-            id:{type:Nubmer, required:true},
+            
             name:{type:String, required:true},
-            Quantity:{type:Number,required:true,default:0},
-            price:{type:Number,required:true}
+            img:{type:String,required:true},
+            price:{type:Number,required:true},
+            qty:{type:Number,required:true},
+
+
             
     
     }

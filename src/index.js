@@ -1,4 +1,3 @@
-
 const express = require("express");
 const cors = require("cors");
 const connect = require("./configs/db")
@@ -22,7 +21,7 @@ app.use(cors());
 
 
 //----------------product page use controllers------------------//
-app.use("/fruit", fruitController);
+app.use("/fruits", fruitController);
 app.use("/veg", vegController);
 app.use("/register",userController);
 

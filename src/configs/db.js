@@ -7,8 +7,7 @@
 const mongoose = require("mongoose");
 module.exports = () => {
   return mongoose.connect(
-    "mongodb+srv://fastrack:fastrack1.@cluster0.mwv9a.mongodb.net/fastrack"
-    // "mongodb+srv://fastrack:fastrack1.@cluster0.mwv9a.mongodb.net/fastrack?retryWrites=true&w=majority"
+    "mongodb+srv://fraazo:fraazo@cluster0.gpmra.mongodb.net/frazoo"
     );
 }
 

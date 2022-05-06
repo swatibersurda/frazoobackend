@@ -4,12 +4,16 @@ const fruitSchema = new mongoose.Schema(
     {
       
             
-            id:{type:Nubmer, required:true},
-            name:{type:String, required:true},
-            Quantity:{type:Number,required:true},
-            price:{type:Number,required:true}
+           
+        name:{type:String, required:true},
+        img:{type:String,required:true},
+        price:{type:Number,required:true},
+        qty:{type:Number,required:true},
             
     
+    },{
+        timestamps : true,
+        versionKey : false,
     }
 
 )
