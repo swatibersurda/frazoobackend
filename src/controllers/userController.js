@@ -67,9 +67,10 @@ const router = express.Router();
 })
 router.get("/",(req,res)=>{
   const {mobileno} = req.body
+  console.log("mobile",mobileno)
   User.findOne({mobileno:mobileno},(err,user)=>{
       if(user){
-          if(mobileno==user.mobileno ){
+          if(mobileno===user.mobileno ){
               res.send({message:"Login Successfull", user: user})
           }else{
               res.send({message:"Incorrect MobileNO."})
