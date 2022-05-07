@@ -10,6 +10,8 @@ const vegController = require("./controllers/vegController");
 const fruitController = require("./controllers/fruitController");
 
 const userController = require("./controllers/userController");
+
+const useController=require("./controllers/useController")
 //-------------------//------------------------------//----------//
 
 const app = express();
@@ -24,6 +26,7 @@ app.use(cors());
 app.use("/fruits", fruitController);
 app.use("/veg", vegController);
 app.use("/register",userController);
+app.use("/use",useController)
 
 
 //-------------------//---------------------------//---------------//
