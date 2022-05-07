@@ -42,7 +42,7 @@ const router = express.Router();
 //     }
 //   });
 
-  router.post("/register",(req,res)=>{
+  router.post("/",(req,res)=>{
    const {first_name,last_name,email,mobileno}=req.body
    User.findOne({email:email},(err,user)=>{
     if(user){
@@ -65,7 +65,7 @@ const router = express.Router();
         }
    })
 })
-router.get("/login",(req,res)=>{
+router.get("/",(req,res)=>{
   const {mobileno} = req.body
   User.findOne({mobileno:mobileno},(err,user)=>{
       if(user){
