@@ -65,7 +65,7 @@ const router = express.Router();
         }
    })
 })
-router.post("/login",(req,res)=>{
+router.get("/login",(req,res)=>{
   const {mobileno} = req.body
   User.findOne({mobileno:mobileno},(err,user)=>{
       if(user){
