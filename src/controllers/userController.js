@@ -3,6 +3,8 @@ const express = require("express");
 const User= require("../models/userModel");
 
 const router = express.Router();
+// const app=express();
+
 
 // router.post("",(req,res)=>{
 //     const {first_name,last_name,email,mobileno}=req.body
@@ -40,7 +42,7 @@ const router = express.Router();
 //     }
 //   });
 
-  app.post("/register",(req,res)=>{
+  router.post("/",(req,res)=>{
    const {first_name,last_name,email,mobileno}=req.body
    User.findOne({email:email},(err,user)=>{
     if(user){
@@ -63,7 +65,7 @@ const router = express.Router();
         }
    })
 })
-app.post("/login",(req,res)=>{
+router.post("/",(req,res)=>{
   const {mobileno} = req.body
   User.findOne({mobileno:mobileno},(err,user)=>{
       if(user){
